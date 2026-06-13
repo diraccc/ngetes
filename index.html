@@ -70,9 +70,17 @@
     .game-logo .fallback-initial{display:none!important;position:absolute;inset:0;place-items:center;text-align:center;padding:4px;color:#EFFFFF!important;font-family:var(--display);font-size:12px!important;font-weight:950;line-height:1;letter-spacing:-.04em!important;text-indent:0!important}
     .game-logo.no-img .fallback-initial,.game-logo.img-missing .fallback-initial{display:grid!important}.game-logo.img-missing img{display:none!important}
     @media(max-width:720px){.game-select-card{position:relative}.game-picker{max-height:130px;overflow-x:auto}.game-btn{min-width:150px}.metric:nth-child(2) b{font-size:18px}}
+
+
+    /* === UI/UX Max Patch: aksesibilitas, pencarian katalog, trust, FAQ, dan polish mobile === */
+    .skip-link{position:fixed;left:18px;top:12px;z-index:4000;transform:translateY(-140%);background:linear-gradient(135deg,var(--brand),var(--brand2));color:#061018;padding:10px 14px;border-radius:14px;font-weight:950;box-shadow:var(--shadow2);transition:.22s var(--ease)}
+    .skip-link:focus{transform:none}.checkout-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:-2px 0 18px}.checkout-trust span{display:flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:8px 10px;border:1px solid rgba(92,225,230,.16);border-radius:15px;background:linear-gradient(180deg,rgba(92,225,230,.075),rgba(255,255,255,.025));color:#D9FDFF;font-size:12px;font-weight:900;text-align:center}.catalog-tools{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;margin:0 0 12px}.searchbox{height:52px;display:grid;grid-template-columns:42px 1fr;align-items:center;border:1px solid var(--line);border-radius:18px;background:rgba(5,7,13,.56);transition:.2s var(--ease)}.searchbox:focus-within{border-color:rgba(92,225,230,.60);box-shadow:0 0 0 4px rgba(92,225,230,.10);background:rgba(8,12,22,.88)}.searchbox span{display:grid;place-items:center;color:#A9F7FB;font-size:20px;font-weight:900}.searchbox input{height:100%;width:100%;border:0;outline:0;background:transparent;color:var(--text);font-weight:800;padding-right:14px}.searchbox input::placeholder{color:#637189}.catalog-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.catalog-chip{height:42px;padding:0 13px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--muted);font-size:12px;font-weight:950;transition:.2s var(--ease)}.catalog-chip:hover{color:var(--text);background:rgba(255,255,255,.075);transform:translateY(-1px)}.catalog-chip.active{color:#061018;background:linear-gradient(135deg,var(--brand),var(--brand2));border-color:transparent;box-shadow:0 10px 28px rgba(92,225,230,.16)}.empty-catalog{grid-column:1/-1;padding:28px 18px;border:1px dashed rgba(255,255,255,.18);border-radius:22px;background:rgba(255,255,255,.035);text-align:center;color:var(--muted);font-weight:850}.game-btn{isolation:isolate}.game-btn:after{content:"";position:absolute;left:12px;right:12px;bottom:10px;height:3px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand2));opacity:0;transform:scaleX(.3);transition:.2s var(--ease)}.game-btn.active:after{opacity:1;transform:scaleX(1)}.product.sel,.pay.sel,.game-btn.active{outline:1px solid rgba(255,255,255,.12)}.product b,.pay b,.game-btn b{letter-spacing:-.015em}.summary{border-color:rgba(92,225,230,.18)}.summary:before{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--brand),var(--brand2),var(--brand3))}.orderbtn:disabled{cursor:not-allowed;filter:grayscale(.25);opacity:.62}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.faq-grid details{border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.035);overflow:hidden}.faq-grid summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:950;color:var(--text);display:flex;justify-content:space-between;gap:16px}.faq-grid summary::-webkit-details-marker{display:none}.faq-grid summary:after{content:"+";color:#A9F7FB;font-size:22px;line-height:1}.faq-grid details[open] summary:after{content:"–"}.faq-grid p{padding:0 20px 18px;color:var(--muted);font-size:13px;line-height:1.7}.floating-help{position:fixed;right:18px;bottom:90px;z-index:1100;display:flex;align-items:center;gap:9px;padding:12px 14px;border-radius:999px;background:rgba(13,17,29,.90);border:1px solid rgba(92,225,230,.22);box-shadow:var(--shadow2);backdrop-filter:blur(16px);color:#EFFFFF;font-size:12px;font-weight:950;transition:.2s var(--ease)}.floating-help:hover{transform:translateY(-2px);background:rgba(20,29,49,.95)}.floating-help span{width:28px;height:28px;display:grid;place-items:center;border-radius:999px;background:rgba(92,225,230,.12)}.img-fallback{display:grid;place-items:center;min-height:34px;width:100%;border-radius:10px;background:linear-gradient(135deg,rgba(92,225,230,.13),rgba(124,92,255,.13));color:#EFFFFF;font-size:11px;font-weight:950;text-align:center;padding:3px 6px;border:1px solid rgba(255,255,255,.08)}.pay .img-fallback{height:34px}.pay-row .img-fallback{height:28px;width:54px}
+    @media(max-width:720px){.checkout-trust{grid-template-columns:1fr}.catalog-tools{grid-template-columns:1fr}.catalog-chips{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}.catalog-chip{flex:0 0 auto}.faq-grid{grid-template-columns:1fr}.floating-help{right:12px;bottom:76px;padding:10px 12px}.mobile-cart.show ~ .floating-help{bottom:86px}.game-picker{scrollbar-width:none}.game-picker::-webkit-scrollbar{display:none}}
+
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#order">Lewati ke form top up</a>
   <div class="noise"></div>
   <header class="topbar">
     <div class="wrap nav">
@@ -138,7 +146,24 @@
             <div class="panel-pad">
               <div class="panel-title"><h3>Detail Top Up</h3><a href="#summary" class="editlink">Lihat Ringkasan</a></div>
               <div class="stepper"><div class="stepchip on" id="stGame">1. Game</div><div class="stepchip" id="stAccount">2. Akun</div><div class="stepchip" id="stProduct">3. Nominal</div><div class="stepchip" id="stPay">4. Bayar</div></div>
-              <div class="label"><span>Pilih game</span><span class="helper">Katalog utama</span></div>
+              <div class="checkout-trust" aria-label="Keunggulan checkout">
+                <span>⚡ Proses ringkas</span>
+                <span>🧾 Total realtime</span>
+                <span>🔒 Data divalidasi</span>
+              </div>
+              <div class="label"><span>Pilih game</span><span class="helper" id="gameCount">Katalog utama</span></div>
+              <div class="catalog-tools" aria-label="Cari dan filter katalog">
+                <div class="searchbox">
+                  <span aria-hidden="true">⌕</span>
+                  <input id="gameSearch" type="search" autocomplete="off" placeholder="Cari game, voucher, atau layanan..." aria-label="Cari game atau voucher" />
+                </div>
+                <div class="catalog-chips" role="list" aria-label="Filter katalog">
+                  <button class="catalog-chip active" type="button" data-filter="all">Semua</button>
+                  <button class="catalog-chip" type="button" data-filter="popular">Populer</button>
+                  <button class="catalog-chip" type="button" data-filter="game">Game</button>
+                  <button class="catalog-chip" type="button" data-filter="voucher">Voucher</button>
+                </div>
+              </div>
               <div class="game-picker" id="gamePicker"></div>
               <div class="error" id="eGame">Pilih game terlebih dahulu.</div>
               <div class="divider"></div>
@@ -232,7 +257,25 @@
     </section>
   </main>
 
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="sec-head reveal"><div><div class="sec-kicker">FAQ</div><h2 class="sec-title">Pertanyaan yang sering bikin user ragu.</h2></div><p class="sec-desc">Bagian ini membantu user baru merasa aman sebelum checkout dan mengurangi chat berulang ke admin.</p></div>
+        <div class="faq-grid reveal">
+          <details open><summary>Berapa lama proses top up?</summary><p>File ini menyiapkan tampilan checkout dan order lokal. Untuk proses otomatis 1–3 menit, sambungkan ke supplier dan payment gateway di backend.</p></details>
+          <details><summary>Apakah total bayar sudah termasuk admin?</summary><p>Ya. Ringkasan pesanan menghitung harga produk, biaya admin metode pembayaran, dan total akhir secara realtime sebelum order dibuat.</p></details>
+          <details><summary>Bagaimana kalau salah User ID?</summary><p>User harus mengecek ulang User ID dan server sebelum membuat order. Catatan keamanan sudah ditampilkan di ringkasan supaya kesalahan input bisa dikurangi.</p></details>
+          <details><summary>Apakah kode order bisa dicek lagi?</summary><p>Bisa, selama order dibuat dari perangkat/browser yang sama karena data demo disimpan di localStorage.</p></details>
+        </div>
+      </div>
+    </section>
+
   <footer class="footer"><div class="wrap footergrid"><div><a class="brand" href="#home"><img src="logo 3.webp" class="brand-img" alt="Logo DIRAC GROUP" /><span class="brand-copy"><b>DIRAC GROUP</b><span>Premium game checkout</span></span></a><p style="margin-top:14px">Platform top up game dengan alur checkout ringkas, status order, dan tampilan yang dirancang untuk transaksi mobile.</p><div class="pay-row"><img src="pay1.webp" alt="QRIS" /><img src="pay2.webp" alt="GoPay" /><img src="pay3.webp" alt="OVO" /><img src="pay4.webp" alt="DANA" /><img src="pay5.webp" alt="ShopeePay" /><img src="pay6.webp" alt="Bank" /></div><div class="copyright">© 2026 DIRAC GROUP. All rights reserved.</div></div><div><h4>Produk</h4><a href="#order">Mobile Legends</a><a href="#order">Free Fire & FFMAX</a><a href="#order">PUBG Mobile</a><a href="#order">Garena Shell</a><a href="#order">Riot Cash</a><a href="#order">40+ katalog lainnya</a></div><div><h4>Transaksi</h4><a href="#order">Buat Pesanan</a><a href="#status">Cek Status</a><a href="#trust">Keamanan</a><a href="#how">Cara Top Up</a></div><div><h4>Bantuan</h4><a href="#policy">Kebijakan Refund</a><a href="#policy">Syarat & Ketentuan</a><a href="#policy">Kebijakan Privasi</a><a href="#status">Butuh Bantuan?</a></div></div></footer>
+
+
+  <a class="floating-help" href="#status" aria-label="Cek status pesanan">
+    <span>🧾</span><b>Cek Status</b>
+  </a>
 
   <div class="modal" id="modal"><div class="modal-card"><div class="modal-top"><h3>Pesanan dibuat</h3><p>Simpan kode order dan lanjutkan pembayaran sesuai metode yang dipilih.</p><div class="codebox"><b id="mCode">ORD-000</b><button class="copybtn" onclick="copyOrderCode()" type="button">Salin</button></div></div><div class="modal-body"><div class="countdown" id="mCountdown">Berlaku 15:00</div><div class="sum-row"><span>Layanan</span><span id="mService">—</span></div><div class="sum-row"><span>Game</span><span id="mGame">—</span></div><div class="sum-row"><span>User ID</span><span id="mUID">—</span></div><div class="sum-row"><span>Produk</span><span id="mProduct">—</span></div><div class="sum-row"><span>Total</span><span id="mTotal">—</span></div><div class="pay-instruction" id="mInstruction">Instruksi pembayaran akan tampil di sini.</div><div class="modal-actions"><button class="secondary" onclick="closeModal()" type="button">Tutup</button><button class="btn-main" onclick="continuePayment()" type="button">Lanjut Bayar</button></div></div></div></div>
   <div class="toast" id="toast">Info</div>
@@ -245,7 +288,7 @@ const STORE_KEY='dirac-orders-v6-premium';
 // logo 3.webp, ml.webp, ff.webp, pubg.webp, gi.webp, valo.webp
 const BRAND_LOGO_SRC='logo 3.webp';
 const __OLD_BRAND_FALLBACK='data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjggMTI4Jz4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdhJyB4MT0nMCcgeTE9JzAnIHgyPScxJyB5Mj0nMSc+PHN0b3Agc3RvcC1jb2xvcj0nIzVDRTFFNicvPjxzdG9wIG9mZnNldD0nMScgc3RvcC1jb2xvcj0nIzdDNUNGRicvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ncycgeD0nLTMwJScgeT0nLTMwJScgd2lkdGg9JzE2MCUnIGhlaWdodD0nMTYwJSc+PGZlRHJvcFNoYWRvdyBkeD0nMCcgZHk9JzE0JyBzdGREZXZpYXRpb249JzEyJyBmbG9vZC1jb2xvcj0ncmdiYSgwLDAsMCwuMzUpJy8+PC9maWx0ZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0nMTI4JyBoZWlnaHQ9JzEyOCcgcng9JzM0JyBmaWxsPSd1cmwoI2EpJy8+CjxwYXRoIGQ9J00zMSA2N2MxNi0zMCA1MC00MiA3My0yNS02IDMwLTMzIDUzLTY1IDUzLTEzIDAtMTktMTAtOC0yOFonIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjI4KScvPgo8ZyBmaWx0ZXI9J3VybCgjcyknIGZpbGw9J25vbmUnIHN0cm9rZT0ncmdiYSgyNTUsMjU1LDI1NSwuODgpJyBzdHJva2Utd2lkdGg9JzgnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCc+CjxwYXRoIGQ9J00zNCA4MGMxMi0zMSA0My00OCA3MC00NCcvPjxwYXRoIGQ9J00zNyA4MWMyNSA0IDQ5LTQgNjctMjUnLz48cGF0aCBkPSdNNTQgNDFjLTcgMTYtNyAzMiAwIDQ4Jy8+PHBhdGggZD0nTTc4IDM1YzcgMTUgNyAzMSAwIDQ4Jy8+CjwvZz48L3N2Zz4=';
-const BRAND_FALLBACK='';
+const BRAND_FALLBACK='data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20160%20160%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20stop-color%3D%27%235CE1E6%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%237C5CFF%27/%3E%3C/linearGradient%3E%3Cfilter%20id%3D%27s%27%3E%3CfeDropShadow%20dx%3D%270%27%20dy%3D%2710%27%20stdDeviation%3D%278%27%20flood-color%3D%27rgba%280%2C0%2C0%2C.35%29%27/%3E%3C/filter%3E%3C/defs%3E%3Crect%20width%3D%27160%27%20height%3D%27160%27%20rx%3D%2744%27%20fill%3D%27url%28%23g%29%27/%3E%3Ccircle%20cx%3D%27122%27%20cy%3D%2730%27%20r%3D%2742%27%20fill%3D%27rgba%28255%2C255%2C255%2C.20%29%27/%3E%3Cpath%20d%3D%27M39%2092c20-38%2063-54%2091-30-9%2038-43%2066-82%2066-16%200-24-13-9-36Z%27%20fill%3D%27rgba%28255%2C255%2C255%2C.26%29%27/%3E%3Cg%20filter%3D%27url%28%23s%29%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%2710%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%20opacity%3D%27.92%27%3E%3Cpath%20d%3D%27M42%2098c16-39%2054-59%2088-54%27/%3E%3Cpath%20d%3D%27M45%2099c31%205%2062-5%2084-34%27/%3E%3Cpath%20d%3D%27M69%2050c-9%2022-9%2043%200%2064%27/%3E%3Cpath%20d%3D%27M100%2044c8%2020%208%2039%200%2060%27/%3E%3C/g%3E%3Ctext%20x%3D%2780%27%20y%3D%27146%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2715%27%20font-weight%3D%27800%27%20fill%3D%27white%27%20opacity%3D%27.86%27%3EDIRAC%3C/text%3E%3C/svg%3E';
 const __OLD_BRAND_FALLBACK_UNUSED='data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjggMTI4Jz4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdhJyB4MT0nMCcgeTE9JzAnIHgyPScxJyB5Mj0nMSc+PHN0b3Agc3RvcC1jb2xvcj0nIzVDRTFFNicvPjxzdG9wIG9mZnNldD0nMScgc3RvcC1jb2xvcj0nIzdDNUNGRicvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0ncycgeD0nLTMwJScgeT0nLTMwJScgd2lkdGg9JzE2MCUnIGhlaWdodD0nMTYwJSc+PGZlRHJvcFNoYWRvdyBkeD0nMCcgZHk9JzE0JyBzdGREZXZpYXRpb249JzEyJyBmbG9vZC1jb2xvcj0ncmdiYSgwLDAsMCwuMzUpJy8+PC9maWx0ZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0nMTI4JyBoZWlnaHQ9JzEyOCcgcng9JzM0JyBmaWxsPSd1cmwoI2EpJy8+CjxwYXRoIGQ9J00zMSA2N2MxNi0zMCA1MC00MiA3My0yNS02IDMwLTMzIDUzLTY1IDUzLTEzIDAtMTktMTAtOC0yOFonIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjI4KScvPgo8ZyBmaWx0ZXI9J3VybCgjcyknIGZpbGw9J25vbmUnIHN0cm9rZT0ncmdiYSgyNTUsMjU1LDI1NSwuODgpJyBzdHJva2Utd2lkdGg9JzgnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCc+CjxwYXRoIGQ9J00zNCA4MGMxMi0zMSA0My00OCA3MC00NCcvPjxwYXRoIGQ9J00zNyA4MWMyNSA0IDQ5LTQgNjctMjUnLz48cGF0aCBkPSdNNTQgNDFjLTcgMTYtNyAzMiAwIDQ4Jy8+PHBhdGggZD0nTTc4IDM1YzcgMTUgNyAzMSAwIDQ4Jy8+CjwvZz48L3N2Zz4=';
 const GAME_ICONS={
   ml:'ml.webp',
@@ -2767,12 +2810,13 @@ const GAMES={
 };
 const PAYMENTS=[{id:'qris',name:'QRIS',fee:0,label:'Tanpa admin',img:'pay1.webp'},{id:'gopay',name:'GoPay',fee:1000,label:'+Rp 1.000',img:'pay2.webp'},{id:'ovo',name:'OVO',fee:1000,label:'+Rp 1.000',img:'pay3.webp'},{id:'dana',name:'DANA',fee:1000,label:'+Rp 1.000',img:'pay4.webp'},{id:'spay',name:'ShopeePay',fee:1000,label:'+Rp 1.000',img:'pay5.webp'},{id:'bank',name:'Transfer Bank',fee:2500,label:'+Rp 2.500',img:'pay6.webp'}];
 let S={service:'topup_game',game:'ml',product:null,payment:null,orders:loadOrders(),current:null,timer:null};
+let catalogQuery='', catalogFilter='all';
 const $=id=>document.getElementById(id);
 function rp(n){return 'Rp '+Number(n||0).toLocaleString('id-ID')}
 function escapeHTML(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
 function loadOrders(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||'[]')}catch{return []}}
 function saveOrders(){localStorage.setItem(STORE_KEY,JSON.stringify(S.orders.slice(-30)))}
-function init(){installLogoFallbacks();renderServiceSelect();renderQuick();renderGames();renderProducts();renderPayments();bind();sync();reveal();}
+function init(){installLogoFallbacks();renderServiceSelect();renderQuick();renderGames();renderProducts();renderPayments();bind();sync();initUXEnhancements();reveal();}
 function bind(){
   $('hamb').addEventListener('click',()=>$('mobileMenu').classList.toggle('open'));
   document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>$('mobileMenu').classList.remove('open')));
@@ -2815,9 +2859,62 @@ function setGameLogo(el,g){
 function renderQuick(){const picks=[['ml','ml_257'],['ff','ff_520'],['pubg','pubg_660'],['gi','gi_330']];$('quickList').innerHTML=picks.map(([gk,pid])=>{const g=GAMES[gk],p=g.products.find(x=>x.id===pid);return `<button class="quick-row" type="button" onclick="quickPick('${gk}','${pid}')">${logoHTML(g)}<span class="qmain"><b>${g.name}</b><span>${p.name}</span></span><span class="qprice">${rp(p.price)}</span></button>`}).join('')}
 function renderServiceSelect(){const el=$('serviceSelect');if(!el)return;el.innerHTML=SERVICES.map(s=>`<option value="${s.id}">${escapeHTML(s.name)}</option>`).join('');el.value=S.service||SERVICES[0].id;}
 function renderGameSelect(){const el=$('gameSelect');if(!el)return;el.innerHTML=Object.entries(GAMES).map(([k,g])=>`<option value="${k}">${escapeHTML(g.name)}</option>`).join('');el.value=S.game;}
-function renderGames(){$('gamePicker').innerHTML=Object.entries(GAMES).map(([k,g])=>`<button class="game-btn ${k===S.game?'active':''}" type="button" aria-pressed="${k===S.game}" aria-label="${escapeHTML(g.name)}" onclick="pickGame('${k}')">${logoHTML(g)}<b>${escapeHTML(g.name)}</b></button>`).join('');renderGameSelect()}
+function renderGames(){
+  const q=(catalogQuery||'').trim().toLowerCase();
+  const entries=Object.entries(GAMES).filter(([k,g])=>{
+    const hay=[k,g.name,g.currency,...(g.products||[]).map(p=>`${p.name} ${p.badge} ${p.note}`)].join(' ').toLowerCase();
+    const type=gameCategory(k,g);
+    const passFilter=catalogFilter==='all'||type===catalogFilter||(catalogFilter==='popular'&&isPopularGame(k,g));
+    return passFilter&&(!q||hay.includes(q));
+  });
+  const count=$('gameCount');
+  if(count)count.textContent=entries.length?`${entries.length} katalog tampil`:'Tidak ada hasil';
+  $('gamePicker').innerHTML=entries.length?entries.map(([k,g])=>`<button class="game-btn ${k===S.game?'active':''}" type="button" aria-pressed="${k===S.game}" aria-label="${escapeHTML(g.name)}" onclick="pickGame('${k}')">${logoHTML(g)}<b>${escapeHTML(g.name)}</b><span>${escapeHTML(g.currency||'Produk')}</span></button>`).join(''):`<div class="empty-catalog"><b>Katalog tidak ditemukan</b><br><span>Coba kata kunci lain atau pilih filter “Semua”.</span></div>`;
+  renderGameSelect();
+}
 function renderProducts(){const g=GAMES[S.game];$('products').innerHTML=g.products.map(p=>`<button class="product ${S.product&&S.product.id===p.id?'sel':''} ${/popular|best/i.test(p.badge)?'popular':''}" type="button" aria-pressed="${S.product&&S.product.id===p.id?'true':'false'}" onclick="pickProduct('${p.id}')"><span class="tag">${escapeHTML(p.badge)}</span><b>${escapeHTML(p.name)}</b><span>${rp(p.price)}</span><em>${escapeHTML(p.note)}</em></button>`).join('');updateServerField()}
-function renderPayments(){$('payments').innerHTML=PAYMENTS.map(p=>`<button class="pay ${S.payment&&S.payment.id===p.id?'sel':''}" type="button" aria-pressed="${S.payment&&S.payment.id===p.id?'true':'false'}" onclick="pickPayment('${p.id}')"><img src="${p.img}" alt="${p.name}" /><div><b>${p.name}</b><span>${p.label}</span></div></button>`).join('')}
+function renderPayments(){$('payments').innerHTML=PAYMENTS.map(p=>`<button class="pay ${S.payment&&S.payment.id===p.id?'sel':''}" type="button" aria-pressed="${S.payment&&S.payment.id===p.id?'true':'false'}" onclick="pickPayment('${p.id}')"><img src="${p.img}" alt="${p.name}" /><div><b>${p.name}</b><span>${p.label}</span></div></button>`).join('');installPaymentFallbacks()}
+function gameCategory(k,g){
+  const text=(k+' '+(g.name||'')+' '+(g.currency||'')).toLowerCase();
+  if(/voucher|wallet|cash|shell|gold|playstation|xbox|nintendo|google|unipin|garena|karmakoin|cherry|gocash|hbogo|blizzard|netease/.test(text))return 'voucher';
+  return 'game';
+}
+function isPopularGame(k,g){
+  return ['ml','ff','pubg','gi','valo','roblox','codmobile','honorofkings','voucher_pubg','voucher_valorant','voucher_freefire_ffmax'].includes(k)||/(mobile legends|free fire|pubg|genshin|valorant|roblox|call of duty)/i.test(g.name||'');
+}
+function initUXEnhancements(){
+  const search=$('gameSearch');
+  if(search&&!search.dataset.ready){
+    search.dataset.ready='1';
+    search.addEventListener('input',e=>{catalogQuery=e.target.value;renderGames()});
+    search.addEventListener('keydown',e=>{if(e.key==='Escape'){catalogQuery='';search.value='';renderGames()}});
+  }
+  document.querySelectorAll('.catalog-chip').forEach(btn=>{
+    if(btn.dataset.ready)return;
+    btn.dataset.ready='1';
+    btn.addEventListener('click',()=>{
+      catalogFilter=btn.dataset.filter||'all';
+      document.querySelectorAll('.catalog-chip').forEach(x=>x.classList.toggle('active',x===btn));
+      renderGames();
+    });
+  });
+  installPaymentFallbacks();
+}
+function installPaymentFallbacks(){
+  document.querySelectorAll('.pay img,.pay-row img,#heroPayImg').forEach(img=>{
+    if(img.dataset.fallbackReady)return;
+    img.dataset.fallbackReady='1';
+    img.addEventListener('error',()=>{
+      if(!img.parentElement||img.dataset.didFallback)return;
+      img.dataset.didFallback='1';
+      const alt=img.getAttribute('alt')||'Payment';
+      const fallback=document.createElement('span');
+      fallback.className='img-fallback';
+      fallback.textContent=alt;
+      img.replaceWith(fallback);
+    });
+  });
+}
 function updateServerField(){const g=GAMES[S.game];$('serverWrap').style.display=g.needServer?'grid':'none';$('serverLabel').textContent=g.serverLabel||'Server';$('serverHint').textContent=g.serverHint||'Wajib';$('fSrv').placeholder=g.serverLabel?`Masukkan ${g.serverLabel}`:'Masukkan server'}
 function quickPick(gk,pid){pickGame(gk,false);pickProduct(pid);document.querySelector('#order').scrollIntoView({behavior:'smooth',block:'start'})}
 function pickGame(k,reset=true){S.game=k;if(reset)S.product=null;renderGames();renderProducts();clearAllErrors();sync();}
@@ -2835,6 +2932,7 @@ function sync(){const g=GAMES[S.game],uid=$('fUID').value.trim(),srv=$('fSrv').v
   $('mockPay').textContent=S.payment?S.payment.name:'Metode pembayaran';
   $('heroPayImg').src=S.payment?S.payment.img:'pay1.webp';
   $('heroPayImg').alt=S.payment?S.payment.name:'QRIS';
+  installPaymentFallbacks();
   if(S.product){
     $('sumEmpty').classList.add('hide');
     $('sumBody').classList.add('show');
