@@ -10821,11 +10821,9 @@ html[data-effective-theme="light"] .site-header .nav{
   }
 
   function startBackendStorefront(){
-    installBackendCheckoutCapture();
-    backendFetchProducts().catch(function(error){
-      console.warn('Gagal memuat katalog database lewat Vercel:', error, window.mumBackendErrors || []);
-      try{ if(typeof showToast === 'function') showToast('Database belum terbaca dari /api/health.'); }catch(e){}
-    });
+    window.mumBackendProductsLoaded = false;
+    window.mumBackendEndpointActive = '';
+    window.mumBackendDisabled = true;
   }
 
   if(document.readyState === 'loading'){
