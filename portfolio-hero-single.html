@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="High-end portfolio hero section for a creative designer and developer."
+    />
+    <title>Creative Designer & Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+      :root {
+        --bg: #030305;
+        --text-primary: #ffffff;
+        --text-secondary: #d5d5d5;
+        --accent: #8a63f8;
+        --success: #00ff88;
+        --glass-bg: rgba(20, 20, 25, 0.4);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --accent-gradient: linear-gradient(135deg, #8a63f8 0%, #5c43fa 100%);
+        --accent-gradient-hover: linear-gradient(135deg, #9c7afa 0%, #6d56fb 100%);
+        --accent-text-gradient: linear-gradient(90deg, #9c7afa 0%, #5a8cff 100%);
+        --video-overlay: linear-gradient(
+          90deg,
+          rgba(5, 5, 8, 0.95) 0%,
+          rgba(29, 29, 53, 0.182) 40%,
+          rgba(5, 5, 8, 0.4) 100%
+        );
+        --font-primary: "Outfit", system-ui, -apple-system, sans-serif;
+        --font-secondary: "Inter", system-ui, -apple-system, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        background: var(--bg);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--text-primary);
+        font-family: var(--font-primary);
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .hero-section {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 2rem 4rem;
+        overflow: hidden;
+      }
+
+      .video-container {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: var(--bg);
+      }
+
+      .video-container video,
+      .video-overlay {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .video-container video {
+        object-fit: cover;
+      }
+
+      .video-overlay {
+        background: var(--video-overlay);
+        pointer-events: none;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .logo i {
+        font-size: 1.8rem;
+        color: var(--text-primary);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      .nav-link {
+        position: relative;
+        color: var(--text-secondary);
+        font-family: var(--font-secondary);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible,
+      .nav-link.active {
+        color: var(--text-primary);
+      }
+
+      .nav-link.active::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--accent-gradient);
+        content: "";
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--glass-border);
+        border-radius: 8px;
+        background: var(--glass-bg);
+        color: var(--text-primary);
+        backdrop-filter: blur(8px);
+        cursor: pointer;
+        transition: background 0.3s ease, border-color 0.3s ease;
+      }
+
+      .mobile-menu-toggle i {
+        font-size: 1.5rem;
+      }
+
+      .mobile-menu-toggle:hover,
+      .mobile-menu-toggle:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-content {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        padding: 2rem 0;
+      }
+
+      .text-wrapper {
+        max-width: 800px;
+      }
+
+      .greeting {
+        margin-bottom: 1rem;
+        color: var(--accent);
+        font-family: var(--font-secondary);
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+      }
+
+      .main-title {
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+        font-size: 4.5rem;
+        font-weight: 700;
+        letter-spacing: -1px;
+        line-height: 1.1;
+      }
+
+      .sub-title {
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      .accent-text-gradient {
+        display: inline-block;
+        background: var(--accent-text-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .cta-group {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0.9rem 2rem;
+        border-radius: 8px;
+        font-family: var(--font-secondary);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        line-height: 1;
+        text-transform: uppercase;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent-gradient);
+        box-shadow: 0 8px 24px rgba(138, 99, 248, 0.25);
+        color: var(--text-primary);
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        transform: translateY(-2px);
+        background: var(--accent-gradient-hover);
+        box-shadow: 0 12px 28px rgba(138, 99, 248, 0.4);
+      }
+
+      .btn-outline {
+        border: 1px solid var(--glass-border);
+        background: transparent;
+        color: var(--text-primary);
+        backdrop-filter: blur(8px);
+      }
+
+      .btn-outline:hover,
+      .btn-outline:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-footer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+        padding-top: 2rem;
+      }
+
+      .footer-left {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .social-links {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--glass-border);
+        border-radius: 50%;
+        background: var(--glass-bg);
+        color: var(--text-primary);
+        font-family: var(--font-secondary);
+        font-size: 0.78rem;
+        font-weight: 600;
+        backdrop-filter: blur(8px);
+        transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+      }
+
+      .social-links a:hover,
+      .social-links a:focus-visible {
+        transform: translateY(-3px);
+        background: var(--text-primary);
+        color: var(--bg);
+      }
+
+      .stats-group {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+
+      .stat {
+        display: grid;
+        gap: 0.25rem;
+      }
+
+      .stat strong {
+        font-size: 1.35rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .stat span {
+        color: var(--text-secondary);
+        font-family: var(--font-secondary);
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+      }
+
+      .stat-line {
+        width: 1px;
+        height: 34px;
+        background: var(--glass-border);
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        left: 50%;
+        bottom: 2.2rem;
+        transform: translateX(-50%);
+      }
+
+      .mouse {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        width: 28px;
+        height: 46px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 999px;
+      }
+
+      .wheel {
+        width: 4px;
+        height: 8px;
+        margin-top: 9px;
+        border-radius: 999px;
+        background: var(--text-primary);
+        animation: wheel 2s infinite;
+      }
+
+      .availability-card {
+        max-width: 320px;
+        padding: 1.5rem 2rem;
+        border: 1px solid var(--glass-border);
+        border-radius: 16px;
+        background: var(--glass-bg);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(16px);
+      }
+
+      .availability-header {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: 0.8rem;
+        font-family: var(--font-secondary);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+      }
+
+      .pulse-dot {
+        position: relative;
+        display: inline-block;
+        flex: 0 0 auto;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--success);
+        box-shadow: 0 0 12px rgba(0, 255, 136, 0.7);
+      }
+
+      .pulse-dot::after {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: var(--success);
+        content: "";
+        animation: pulse 2s infinite;
+      }
+
+      .availability-card p {
+        color: var(--text-secondary);
+        font-size: 0.98rem;
+        font-weight: 300;
+        line-height: 1.55;
+      }
+
+      .animate-fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+
+      .delay-4 {
+        animation-delay: 0.5s;
+      }
+
+      @keyframes fade-up {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes wheel {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 0.8;
+          transform: scale(1);
+        }
+
+        100% {
+          opacity: 0;
+          transform: scale(2.5);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .hero-section {
+          padding: 2rem;
+        }
+
+        .main-title {
+          font-size: 4.5rem;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .nav-links,
+        .nav-actions {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          display: inline-flex;
+        }
+
+        .hero-footer {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 3rem;
+        }
+
+        .scroll-indicator {
+          display: none;
+        }
+
+        .footer-left {
+          justify-content: space-between;
+        }
+
+        .availability-card {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 1.5rem;
+        }
+
+        .main-title {
+          font-size: 3.5rem;
+        }
+
+        .sub-title {
+          font-size: 1.4rem;
+        }
+
+        .cta-group {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .footer-left {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .stats-group {
+          flex-wrap: wrap;
+        }
+
+        .stat-line {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-title {
+          font-size: 2.8rem;
+        }
+
+        .sub-title {
+          font-size: 1.2rem;
+        }
+
+        .greeting {
+          font-size: 0.95rem;
+        }
+
+        .availability-card {
+          padding: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero-section">
+      <div class="video-container" aria-hidden="true">
+        <video
+          id="heroVideo"
+          src="https://res.cloudinary.com/dprydfxok/video/upload/v1782586973/portfolio_hero_bg_zuhahj.webm"
+          autoplay
+          muted
+          playsinline
+          preload="auto"
+        ></video>
+        <div class="video-overlay"></div>
+      </div>
+
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="logo animate-fade-up delay-1" href="#" aria-label="Home">
+          <i class="ph ph-cube-transparent" aria-hidden="true"></i>
+          <span>ARC</span>
+        </a>
+
+        <div class="nav-links animate-fade-up delay-2">
+          <a class="nav-link active" href="#work">Work</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions animate-fade-up delay-2">
+          <a class="btn btn-outline" href="#contact">Let's Work Together</a>
+        </div>
+
+        <button class="mobile-menu-toggle animate-fade-up delay-2" type="button" aria-label="Open menu">
+          <i class="ph ph-list" aria-hidden="true"></i>
+        </button>
+      </nav>
+
+      <section class="hero-content" aria-labelledby="hero-title">
+        <div class="text-wrapper">
+          <p class="greeting animate-fade-up delay-1">HELLO, I'M</p>
+          <h1 id="hero-title" class="main-title animate-fade-up delay-2">
+            Creative Designer <br />
+            &amp; Developer
+          </h1>
+          <p class="sub-title accent-text-gradient animate-fade-up delay-3">
+            I build immersive digital experiences
+          </p>
+          <div class="cta-group animate-fade-up delay-4">
+            <a class="btn btn-primary" href="#work">View My Work</a>
+            <a class="btn btn-outline" href="./cv.pdf" download>Download CV</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="hero-footer animate-fade-up delay-4">
+        <div class="footer-left">
+          <div class="social-links" aria-label="Social links">
+            <a href="#" aria-label="Dribbble">Db</a>
+            <a href="#" aria-label="Behance">Be</a>
+            <a href="#" aria-label="LinkedIn">In</a>
+          </div>
+
+          <div class="stats-group" aria-label="Portfolio highlights">
+            <div class="stat">
+              <strong>08+</strong>
+              <span>Years</span>
+            </div>
+            <span class="stat-line" aria-hidden="true"></span>
+            <div class="stat">
+              <strong>120+</strong>
+              <span>Projects</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+          <span class="mouse">
+            <span class="wheel"></span>
+          </span>
+        </div>
+
+        <aside class="availability-card" aria-label="Availability status">
+          <div class="availability-header">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span>Available for select projects</span>
+          </div>
+          <p>
+            Crafting polished interfaces, visual systems, and interactive web experiences
+            for ambitious brands.
+          </p>
+        </aside>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const video = document.querySelector("#heroVideo");
+
+        if (!video) {
+          return;
+        }
+
+        video.currentTime = 0;
+
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+          playPromise.catch((error) => {
+            console.warn("Autoplay was prevented by the browser:", error);
+          });
+        }
+
+        video.addEventListener("ended", () => {
+          console.log("Hero video reached the final frame.");
+        });
+      });
+    </script>
+  </body>
+</html>
