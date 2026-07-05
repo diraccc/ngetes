@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Genova Biosciences develops biotechnology solutions that advance science and transform lives."
+    />
+    <title>Genova Biosciences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-primary: #1a56db;
+        --color-primary-light: #eff6ff;
+        --color-text-primary: #0a192f;
+        --color-text-secondary: #475569;
+        --color-chip-bg: #e0f2fe;
+        --color-chip-text: #0369a1;
+        --color-button: #0c2b64;
+        --color-button-hover: #133a80;
+        --color-secondary-button: rgba(255, 255, 255, 0.4);
+        --color-secondary-border: rgba(0, 0, 0, 0.1);
+        --color-divider: rgba(0, 0, 0, 0.1);
+        --color-background: #f8fafc;
+        --shadow-button: 0 16px 34px rgba(12, 43, 100, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: "Inter", sans-serif;
+        background: var(--color-background);
+        color: var(--color-text-primary);
+        scroll-behavior: smooth;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a,
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .app-shell {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+        isolation: isolate;
+        background: var(--color-background);
+      }
+
+      .hero-video {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center right;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+      }
+
+      .is-ready .hero-video {
+        opacity: 1;
+      }
+
+      .video-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+          90deg,
+          rgba(240, 248, 255, 1) 0%,
+          rgba(240, 248, 255, 0.85) 40%,
+          rgba(240, 248, 255, 0) 100%
+        );
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        width: 100%;
+        padding: 1.5rem 4rem;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex: 0 0 auto;
+      }
+
+      .logo-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        color: var(--color-primary);
+        background: var(--color-primary-light);
+        box-shadow: inset 0 0 0 1px rgba(26, 86, 219, 0.08);
+      }
+
+      .logo-copy {
+        display: grid;
+        gap: 0.25rem;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      .logo-subtext {
+        color: var(--color-text-secondary);
+        font-size: 0.65rem;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        color: var(--color-text-primary);
+      }
+
+      .nav-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+        line-height: 1;
+        transition: color 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible {
+        color: var(--color-primary);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        min-height: 3rem;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid transparent;
+        border-radius: 9999px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .button:focus-visible {
+        outline: 3px solid rgba(26, 86, 219, 0.24);
+        outline-offset: 3px;
+      }
+
+      .button-primary {
+        color: #ffffff;
+        background: var(--color-button);
+        box-shadow: var(--shadow-button);
+      }
+
+      .button-primary:hover,
+      .button-primary:focus-visible {
+        background: var(--color-button-hover);
+        transform: translateY(-1px);
+      }
+
+      .button-secondary {
+        color: var(--color-text-primary);
+        background: var(--color-secondary-button);
+        border-color: var(--color-secondary-border);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      .button-secondary:hover,
+      .button-secondary:focus-visible {
+        background: rgba(255, 255, 255, 0.6);
+        border-color: rgba(0, 0, 0, 0.16);
+      }
+
+      .nav-cta {
+        flex: 0 0 auto;
+      }
+
+      .hero-main {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: calc(100vh - 6rem);
+      }
+
+      .hero-content {
+        width: 100%;
+        max-width: 800px;
+        padding: 0 4rem;
+        margin-top: 2rem;
+      }
+
+      .hero-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        width: fit-content;
+        padding: 0.55rem 0.8rem;
+        margin-bottom: 1.35rem;
+        color: var(--color-chip-text);
+        background: var(--color-chip-bg);
+        border: 1px solid rgba(3, 105, 161, 0.08);
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .chip-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        box-shadow: 0 0 0 4px rgba(26, 86, 219, 0.12);
+      }
+
+      .hero-title {
+        max-width: 780px;
+        margin: 0 0 1.5rem;
+        color: var(--color-text-primary);
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-title span {
+        color: var(--color-primary);
+      }
+
+      .hero-description {
+        max-width: 620px;
+        margin: 0 0 2.5rem;
+        color: var(--color-text-secondary);
+        font-size: 1.15rem;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 4rem;
+      }
+
+      .play-circle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.65rem;
+        height: 1.65rem;
+        border-radius: 50%;
+        color: var(--color-primary);
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: inset 0 0 0 1px var(--color-divider);
+      }
+
+      .icon {
+        width: 1em;
+        height: 1em;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(16px);
+        animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+
+      .delay-0 {
+        animation-delay: 0s;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+
+      @media (max-width: 1180px) {
+        .navbar {
+          gap: 1.5rem;
+          padding-inline: 3rem;
+        }
+
+        .nav-links {
+          gap: 1.5rem;
+        }
+
+        .hero-content {
+          padding-inline: 3rem;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .hero-title {
+          max-width: 680px;
+          font-size: 3.5rem;
+        }
+
+        .hero-description {
+          max-width: 560px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+
+        .video-overlay {
+          background: linear-gradient(
+            90deg,
+            rgba(240, 248, 255, 1) 0%,
+            rgba(240, 248, 255, 0.92) 58%,
+            rgba(240, 248, 255, 0.2) 100%
+          );
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 1rem 2rem;
+        }
+
+        .logo-icon {
+          width: 2.75rem;
+          height: 2.75rem;
+        }
+
+        .hero-main {
+          align-items: flex-start;
+          min-height: calc(100vh - 4.75rem);
+          padding-top: clamp(3rem, 9vh, 5rem);
+        }
+
+        .hero-content {
+          padding: 0 2rem;
+          margin-top: 1rem;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+          line-height: 1.12;
+        }
+
+        .hero-description {
+          font-size: 1rem;
+        }
+
+        .hero-actions {
+          flex-wrap: wrap;
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .navbar {
+          gap: 1rem;
+        }
+
+        .logo {
+          gap: 0.6rem;
+        }
+
+        .logo-text {
+          font-size: 1.3rem;
+        }
+
+        .logo-subtext {
+          font-size: 0.58rem;
+        }
+
+        .nav-cta {
+          min-height: 2.65rem;
+          padding: 0.7rem 1rem;
+          font-size: 0.86rem;
+        }
+
+        .hero-chip {
+          font-size: 0.68rem;
+        }
+
+        .hero-actions {
+          align-items: stretch;
+          flex-direction: column;
+          width: 100%;
+          max-width: 22rem;
+        }
+
+        .hero-actions .button {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .navbar {
+          padding-inline: 1.25rem;
+        }
+
+        .nav-cta {
+          padding-inline: 0.9rem;
+        }
+
+        .nav-cta span {
+          display: none;
+        }
+
+        .hero-content {
+          padding-inline: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell" id="app">
+      <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+        <source
+          src="https://strvid.nyc3.cdn.digitaloceanspaces.com/motionsite/dna_video.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the background video.
+      </video>
+
+      <div class="video-overlay" aria-hidden="true"></div>
+
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="logo" href="/" aria-label="Genova Biosciences home">
+          <span class="logo-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" width="28" height="28" stroke-width="2.2">
+              <path d="m10 16 1.5 1.5" />
+              <path d="m14 8-1.5-1.5" />
+              <path d="M15 2c-2.4 2.4-3.6 4.8-3.6 7.2S12.6 14 15 16.4" />
+              <path d="M9 22c2.4-2.4 3.6-4.8 3.6-7.2S11.4 10 9 7.6" />
+              <path d="M17 6H7" />
+              <path d="M17 18H7" />
+            </svg>
+          </span>
+          <span class="logo-copy">
+            <span class="logo-text">Genova</span>
+            <span class="logo-subtext">Biosciences</span>
+          </span>
+        </a>
+
+        <div class="nav-links" aria-label="Main menu">
+          <a class="nav-link" href="#solutions">
+            <span>Solutions</span>
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke-width="2.2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </a>
+          <a class="nav-link" href="#technology">Technology</a>
+          <a class="nav-link" href="#research">Research</a>
+          <a class="nav-link" href="#about">About Us</a>
+          <a class="nav-link" href="#careers">Careers</a>
+        </div>
+
+        <a class="button button-primary nav-cta" href="#contact">
+          <span>Contact Us</span>
+          <svg class="icon" viewBox="0 0 24 24" width="17" height="17" stroke-width="2.2">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </nav>
+
+      <main class="hero-main">
+        <section class="hero-content" aria-labelledby="hero-title">
+          <div class="hero-chip fade-in-up delay-0">
+            <span class="chip-dot" aria-hidden="true"></span>
+            <span>Innovating Life Sciences</span>
+          </div>
+
+          <h1 class="hero-title fade-in-up delay-1" id="hero-title">
+            Advancing science.
+            <br />
+            <span>Transforming</span> lives.
+          </h1>
+
+          <p class="hero-description fade-in-up delay-2">
+            Genova Biosciences is at the forefront of biotechnology, developing innovative
+            solutions for a healthier tomorrow.
+          </p>
+
+          <div class="hero-actions fade-in-up delay-3" aria-label="Hero actions">
+            <a class="button button-primary" href="#solutions">
+              <span>Explore Our Solutions</span>
+              <svg class="icon" viewBox="0 0 24 24" width="18" height="18" stroke-width="2.2">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+
+            <a class="button button-secondary" href="#story">
+              <span class="play-circle" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" width="14" height="14" stroke-width="2.4">
+                  <path d="m8 5 11 7-11 7Z" fill="currentColor" />
+                </svg>
+              </span>
+              <span>Watch Our Story</span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const app = document.getElementById("app");
+      const video = document.querySelector(".hero-video");
+
+      function markReady() {
+        app.classList.add("is-ready");
+      }
+
+      if (video) {
+        video.addEventListener("canplay", markReady, { once: true });
+        video.play().catch(markReady);
+      } else {
+        markReady();
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const targetId = link.getAttribute("href");
+          if (!targetId || targetId === "#") return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    </script>
+  </body>
+</html>
