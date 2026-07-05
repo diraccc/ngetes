@@ -397,16 +397,34 @@
       position:fixed;inset:0;display:none;align-items:center;justify-content:center;
       background:rgba(0,0,0,0.8);z-index:120;padding:1rem;
     }
-    .modal.open{display:flex}
+    .modal.open,.modal.show{display:flex}
     .modal .figure{
       width:100%;max-width:1100px;border-radius:12px;overflow:hidden;background:transparent;
     }
     .modal .figure .media{
       width:100%;height:0;padding-top:56.25%;position:relative;
     }
-    .modal .figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .modal .figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:rgba(0,0,0,0.35)}
     .close-modal{
-      position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.4);border:none;color:var(--text);padding:0.6rem;border-radius:8px;cursor:pointer;
+      position:absolute;
+      top:14px;
+      right:14px;
+      z-index:5;
+      width:52px;
+      height:52px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,0.72);
+      border:1px solid rgba(255,255,255,0.24);
+      color:var(--text);
+      padding:0;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:1.35rem;
+      line-height:1;
+      touch-action:manipulation;
+      box-shadow:0 10px 28px rgba(0,0,0,0.45);
     }
   
 /* Additional mobile tweaks: prevent header overlap, allow nav scrolling and reduce sizes */
@@ -624,7 +642,7 @@
 </style>
 <style>
 /* Promo 16:9 – Ken Burns Crossfade (5s cadence), slim frame */
-#promo-lab{ --hold:5s; --n:9; --dur:calc(var(--hold) * var(--n)); }
+#promo-lab{ --hold:5s; --n:10; --dur:calc(var(--hold) * var(--n)); }
 #promo-lab .promo16x9{ background:transparent!important; box-shadow:none!important; border:0!important; }
 #promo-lab .stage{ position:relative; width:100%; overflow:hidden; border-radius:10px; }
 #promo-lab .stage::before{ content:""; display:block; padding-top:56.25%; } /* 16:9 */
@@ -961,7 +979,7 @@
 <p class="muted">Halaman ini membantu pelanggan memahami kategori produk, layanan reseller, pilihan grosir, dan proses pemesanan secara ringkas. Informasi disusun agar calon pembeli lebih mudah memilih produk yang sesuai sebelum menghubungi admin.</p>
 </div>
 </section>
-<!-- Gallery (9 images) -->
+<!-- Gallery (10 images) -->
 <section aria-labelledby="galleryHeading" class="container" data-animate="" id="gallery">
 <h2 id="galleryHeading">Galeri Produk &amp; Katalog Lab</h2>
 <p class="muted">Klik gambar untuk melihat katalog atau ilustrasi produk lebih besar.</p>
@@ -993,21 +1011,25 @@
 <div aria-label="Lihat foto katalog 9" class="thumb" data-src="mum118.webp" role="listitem" tabindex="0">
 <img alt="Katalog produk laboratorium 9" loading="lazy" src="mum118.webp"/>
 </div>
+<div aria-label="Lihat foto katalog 10" class="thumb" data-src="mum50.webp" role="listitem" tabindex="0">
+<img alt="Katalog produk laboratorium 10" loading="lazy" src="mum50.webp"/>
+</div>
 </div>
 </section>
 <!-- BEGIN: Promo image under LABORATORIUM with Web To Order button -->
 <section class="container" data-animate="" id="promo-lab">
 <div class="promo16x9" style="background:transparent;box-shadow:none;border:none;margin:0;">
 <div class="stage">
-<figure class="slide" style="--i:0"><div class="media"><img alt="" loading="lazy" src="mum110.webp"/></div></figure>
-<figure class="slide" style="--i:1"><div class="media"><img alt="" loading="lazy" src="mum111.webp"/></div></figure>
-<figure class="slide" style="--i:2"><div class="media"><img alt="" loading="lazy" src="mum112.webp"/></div></figure>
-<figure class="slide" style="--i:3"><div class="media"><img alt="" loading="lazy" src="mum113.webp"/></div></figure>
-<figure class="slide" style="--i:4"><div class="media"><img alt="" loading="lazy" src="mum114.webp"/></div></figure>
-<figure class="slide" style="--i:5"><div class="media"><img alt="" loading="lazy" src="mum115.webp"/></div></figure>
-<figure class="slide" style="--i:6"><div class="media"><img alt="" loading="lazy" src="mum116.webp"/></div></figure>
-<figure class="slide" style="--i:7"><div class="media"><img alt="" loading="lazy" src="mum117.webp"/></div></figure>
-<figure class="slide" style="--i:8"><div class="media"><img alt="" loading="lazy" src="mum118.webp"/></div></figure>
+<figure class="slide" style="--i:0"><div class="media"><img alt="" loading="lazy" src="mm1.webp"/></div></figure>
+<figure class="slide" style="--i:1"><div class="media"><img alt="" loading="lazy" src="mm2.webp"/></div></figure>
+<figure class="slide" style="--i:2"><div class="media"><img alt="" loading="lazy" src="mm3.webp"/></div></figure>
+<figure class="slide" style="--i:3"><div class="media"><img alt="" loading="lazy" src="mm4.webp"/></div></figure>
+<figure class="slide" style="--i:4"><div class="media"><img alt="" loading="lazy" src="mm5.webp"/></div></figure>
+<figure class="slide" style="--i:5"><div class="media"><img alt="" loading="lazy" src="mm6.webp"/></div></figure>
+<figure class="slide" style="--i:6"><div class="media"><img alt="" loading="lazy" src="mm7.webp"/></div></figure>
+<figure class="slide" style="--i:7"><div class="media"><img alt="" loading="lazy" src="mm8.webp"/></div></figure>
+<figure class="slide" style="--i:8"><div class="media"><img alt="" loading="lazy" src="mm9.webp"/></div></figure>
+<figure class="slide" style="--i:9"><div class="media"><img alt="" loading="lazy" src="mm10.webp"/></div></figure>
 </div>
 </div>
 <div class="center-cta" style="padding-top:0.6rem">
@@ -1800,19 +1822,34 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   const img=document.getElementById('lightboxImg') || (m && m.querySelector('img'));
   const close=document.getElementById('closeLightbox') || (m && m.querySelector('[data-close]'));
   if(!m || !img) return;
+  function closeLightbox(){
+    m.classList.remove('open');
+    m.classList.remove('show');
+    window.setTimeout(() => {
+      m.style.display='none';
+      img.src='';
+    }, 120);
+  }
   document.querySelectorAll('.gallery-grid img').forEach(i=>{
     i.addEventListener('click', () =>{
       img.src = i.src;
-      m.classList.add('show');
+      m.classList.add('open');
       m.style.display='flex';
     });
   });
   if(close){
-    close.addEventListener('click', () =>{
-      m.classList.remove('show');
-      setLayananeout(() => { m.style.display='none'; img.src=''; }, 180);
+    close.addEventListener('click', (event) =>{
+      event.preventDefault();
+      event.stopPropagation();
+      closeLightbox();
     });
   }
+  m.addEventListener('click', (event) => {
+    if(event.target === m) closeLightbox();
+  });
+  document.addEventListener('keydown', (event) => {
+    if(event.key === 'Escape' && (m.classList.contains('open') || m.classList.contains('show'))) closeLightbox();
+  });
 })();
 </script>
 <!-- WhatsApp floating button style and markup -->
@@ -1951,13 +1988,13 @@ document.addEventListener('DOMContentLoaded', function(){
       // Add class; shimmer CSS handles a one-shot animation
       btn.classList.add('pressed');
       // remove after animation finishes (slightly longer than CSS animation)
-      clearLayananeout(btn.__shimmer_layananeout);
-      btn.__shimmer_layananeout = setLayananeout(()=> btn.classList.remove('pressed'), 800);
+      clearTimeout(btn.__shimmer_timeout);
+      btn.__shimmer_timeout = setTimeout(()=> btn.classList.remove('pressed'), 800);
     }
 
     function removePressed() {
       // safety: shorter removal (in case pointer canceled)
-      clearLayananeout(btn.__shimmer_layananeout);
+      clearTimeout(btn.__shimmer_timeout);
       btn.classList.remove('pressed');
     }
 
