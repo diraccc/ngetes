@@ -27,9 +27,10 @@
 <meta content="CV Multi Usaha Mandiri menyediakan alat dan bahan laboratorium spesifik, bahan praktikum, consumable, dan lokal untuk retail, reseller, grosir, dan pelanggan yang mencari produk laboratorium berkualitas terpercaya." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://multiusahamandiri.site/logo.webp" property="og:image"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
+<meta content="1536" property="og:image:width"/>
+<meta content="1024" property="og:image:height"/>
 <meta content="https://multiusahamandiri.site/" property="og:url"/>
+<meta content="0267010212694" name="business:nib"/>
 <meta content="#0a0a0a" name="theme-color"/>
 <link href="/favicon.webp?v=3" rel="icon"/>
 <link href="/favicon.webp?v=3" rel="shortcut icon"/>
@@ -89,7 +90,7 @@
       align-items:center;
     }
     .brand-logo{
-      width:48px;
+      width:72px;
       height:48px;
       background:linear-gradient(135deg,var(--accent),var(--accent-2));
       display:inline-flex;
@@ -107,6 +108,28 @@
       line-height:1;
     }
     .brand p{margin:0;font-size:0.82rem;color:var(--muted)}
+    .nib-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:0.55rem;
+      width:max-content;
+      max-width:100%;
+      margin-top:0.75rem;
+      padding:0.58rem 0.78rem;
+      border:1px solid rgba(48,229,204,0.55);
+      border-radius:10px;
+      background:linear-gradient(135deg,rgba(48,229,204,0.18),rgba(220,0,48,0.16));
+      color:var(--text);
+      box-shadow:0 10px 28px rgba(48,229,204,0.16);
+      font-size:0.9rem;
+      font-weight:700;
+      letter-spacing:0.01em;
+    }
+    .nib-badge span{
+      color:var(--accent-2);
+      text-transform:uppercase;
+      font-size:0.72rem;
+    }
     nav.main-nav{
       display:flex;
       gap:0.75rem;
@@ -390,7 +413,7 @@
 @media(max-width:700px){
   /* Make topbar wrap so nav moves under brand and doesn't overlap hero */
   .topbar{flex-wrap:wrap;align-items:center;gap:0.45rem;padding:0.4rem 0;}
-  .brand-logo{width:40px;height:40px;font-size:15px;border-radius:8px;}
+  .brand-logo{width:60px;height:40px;font-size:15px;border-radius:8px;}
   .brand h1{font-size:0.95rem;margin:0;line-height:1;}
   .brand p{font-size:0.72rem;margin:0;}
   /* Make nav full width and horizontally scrollable instead of wrapping into multiple lines */
@@ -764,7 +787,7 @@
 <div class="container topbar">
 <div aria-label="Logo CV Multi Usaha Mandiri" class="brand" role="img">
 <div aria-hidden="true" class="brand-logo">
-<img alt="Logo CV Multi Usaha Mandiri" src="logo.webp" style="width:100%;height:100%;object-fit:cover;border-radius:10px;"/>
+<img alt="Logo CV Multi Usaha Mandiri" src="logo.webp" width="1536" height="1024" style="width:100%;height:100%;object-fit:contain;border-radius:10px;"/>
 </div>
 <div>
 <h1>CV Multi Usaha Mandiri</h1>
@@ -788,6 +811,7 @@
 <div>
 <h2 id="hero-heading" style="margin:0;font-size:1.6rem">CV Multi Usaha Mandiri: Reseller Alat dan Bahan Laboratorium</h2>
 <p class="muted" style="margin:0.25rem 0 0 0">Toko alat dan bahan laboratorium untuk retail, reseller, grosir, dan pembeli yang mencari produk laboratorium berkualitas terpercaya.</p>
+<div aria-label="Nomor Induk Berusaha 0267010212694" class="nib-badge"><span>NIB Resmi</span><strong>0267010212694</strong></div>
 </div>
 <!-- Hero slider -->
 <div aria-label="Hero slideshow" aria-roledescription="carousel" class="slider" data-autoplay="true" data-interval="false">
